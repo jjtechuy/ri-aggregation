@@ -5,10 +5,18 @@ services:
     environment:
         - POSTGRES_HOST_AUTH_METHOD=trust
 
-  geth:
-    image: "matterlabs/geth:latest"
-    environment:
-      - PLUGIN_CONFIG
+  rskj:
+    build: ./docker/rskj
+    container_name: rsk-node-regtest
+    entrypoint: "/usr/bin/java -Drpc.providers.web.ws.enabled=true -Drpc.providers.web.ws.port=8546 Drpc.providers.web.http.port=8545 -cp /usr/share/rsk/rsk.jar co.rsk.Start --regtest --reset> /dev/null 2>&1 &"
+    volumes:
+      - rsk-node-storage:/data
+    restart: unless-stopped
+    networks:
+      - rsk-node-regtest-network
+    ports:
+      - "8545:8545"
+      - "8546:8546"
 
   dev-ticker:
     image: "matterlabs/dev-ticker:latest"
