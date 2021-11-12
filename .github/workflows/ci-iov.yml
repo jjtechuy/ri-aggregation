@@ -4,6 +4,7 @@ on:
     branches:
     - rsk_port_initial
     - rsk_tests_ci
+    - master
 
 jobs:
   linting:
