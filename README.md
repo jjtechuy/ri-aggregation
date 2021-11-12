@@ -1,6 +1,6 @@
 # zkSync: scaling and privacy engine for Ethereum
 
-     [![Logo](zkSyncLogo.svg)](https://zksync.io/)
+[![Logo](zkSyncLogo.svg)](https://zksync.io/)
 
 [![Live on Mainnet](https://img.shields.io/badge/wallet-Live%20on%20Mainnet-blue)](https://wallet.zksync.io)
 [![Live on Rinkeby](https://img.shields.io/badge/wallet-Live%20on%20Rinkeby-blue)](https://rinkeby.zksync.io)
